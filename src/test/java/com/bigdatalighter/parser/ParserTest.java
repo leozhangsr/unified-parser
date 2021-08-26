@@ -4,6 +4,7 @@ import com.bigdatalighter.record.IKeyValueRecord;
 import junit.framework.TestCase;
 
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * @author: Leo Zhang(johnson5211.work@gmail.com)
@@ -16,7 +17,7 @@ public class ParserTest extends TestCase {
     public void testSeparatedKeyValueRecordParser() {
         IKeyValueRecordParser parser = new SeparatedKeyValueRecordParser(new String[]{"a","b","c"}, ",");
         String value = "1,2,4,6";
-        IKeyValueRecord record = parser.parse(value.getBytes());
+        List<IKeyValueRecord> record = parser.parse(value.getBytes());
         System.out.println(record);
         assertNotNull(record);
     }
@@ -30,7 +31,7 @@ public class ParserTest extends TestCase {
     }
 
     public void testUrlLikeParser(IKeyValueRecordParser parser) {
-        IKeyValueRecord result = parser.parse(testCase);
+        List<IKeyValueRecord> result = parser.parse(testCase);
         System.out.println(result);
         assertNotNull(result);
     }

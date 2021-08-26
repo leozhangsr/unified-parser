@@ -3,8 +3,10 @@ package com.bigdatalighter.parser;
 import com.bigdatalighter.record.IKeyValueRecord;
 import com.bigdatalighter.record.factory.IKeyValueRecordFactory;
 import com.bigdatalighter.record.factory.MapBaseRecordFactory;
+import com.google.common.collect.Lists;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 /**
  *
@@ -31,8 +33,8 @@ public abstract class AbstractDelimiterRecordParser<T> implements IKeyValueRecor
     }
 
     @Override
-    public IKeyValueRecord parse(byte[] bytes) {
-        return parse(new String(bytes, charset));
+    public List<IKeyValueRecord> parse(byte[] bytes) {
+        return Lists.newArrayList(parse(new String(bytes, charset)));
     }
 
     public abstract IKeyValueRecord parse(String str);

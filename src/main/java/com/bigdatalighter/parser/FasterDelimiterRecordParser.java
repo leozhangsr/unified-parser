@@ -7,8 +7,10 @@ import com.bigdatalighter.reader.IKeyValueReader;
 import com.bigdatalighter.record.IKeyValueRecord;
 import com.bigdatalighter.record.factory.IKeyValueRecordFactory;
 import com.bigdatalighter.record.factory.MapBaseRecordFactory;
+import com.google.common.collect.Lists;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 /**
  * @author: Leo Zhang(johnson5211.work@gmail.com)
@@ -29,13 +31,13 @@ public class FasterDelimiterRecordParser extends AbstractDelimiterRecordParser<C
     }
 
     @Override
-    public IKeyValueRecord parse(byte[] bytes) {
+    public List<IKeyValueRecord> parse(byte[] bytes) {
         IKeyValueRecord result = recordFactory.create();
         if (bytes != null) {
             bytesReader.readData(bytes);
             bytesReader.readIntoRecord(result);
         }
-        return result;
+        return Lists.newArrayList(result);
     }
 
     @Override

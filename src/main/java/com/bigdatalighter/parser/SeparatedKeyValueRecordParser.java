@@ -3,9 +3,11 @@ package com.bigdatalighter.parser;
 import com.bigdatalighter.record.IKeyValueRecord;
 import com.bigdatalighter.record.factory.IKeyValueRecordFactory;
 import com.bigdatalighter.record.factory.MapBaseRecordFactory;
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 /**
  * This parser is used to parse  one-delimiter string record with predefined keys.
@@ -38,7 +40,7 @@ public class SeparatedKeyValueRecordParser implements IKeyValueRecordParser {
     }
 
     @Override
-    public IKeyValueRecord parse(byte[] bytes) {
+    public List<IKeyValueRecord> parse(byte[] bytes) {
         String values = new String(bytes, charset);
         String[] valueArr = StringUtils.splitByWholeSeparatorPreserveAllTokens(values, valueDelimiter);
         IKeyValueRecord iKeyValueRecord = recordFactory.create();
@@ -46,7 +48,7 @@ public class SeparatedKeyValueRecordParser implements IKeyValueRecordParser {
         for (int i = 0; i < len; i++) {
             iKeyValueRecord.put(keys[i], valueArr[i]);
         }
-        return iKeyValueRecord;
+        return Lists.newArrayList(iKeyValueRecord);
     }
 
 }
