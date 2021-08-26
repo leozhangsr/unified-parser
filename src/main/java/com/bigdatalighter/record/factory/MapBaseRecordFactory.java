@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @author: Leo Zhang(johnson5211.work@gmail.com)
  **/
-public class MapBaseRecordFactory implements IKeyValueRecordFactory {
+public class MapBaseRecordFactory implements IKeyValueRecordFactory<Map> {
     private Class<? extends Map> mapClass;
 
     public MapBaseRecordFactory() {
@@ -19,7 +19,7 @@ public class MapBaseRecordFactory implements IKeyValueRecordFactory {
     }
 
     @Override
-    public IKeyValueRecord create() {
+    public IKeyValueRecord<Map> create() {
         try {
             return mapClass == null ? new MapBaseRecord() : new MapBaseRecord(mapClass.newInstance());
         } catch (Exception e) {

@@ -4,7 +4,7 @@ import com.bigdatalighter.record.IKeyValueRecord;
 
 /**
  * A key-value reader which can read all the key-value iteratively.
- * It should by used in this way:
+ * It should be used in this way:
  * <pre>{@code
  *     IKeyValueReader reader = new IKeyValueReaderImpl();
  *     reader.readData(data);
