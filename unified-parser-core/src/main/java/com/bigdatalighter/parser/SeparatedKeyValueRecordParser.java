@@ -1,8 +1,8 @@
 package com.bigdatalighter.parser;
 
+import com.bigdatalighter.record.factory.MapBaseRecordFactory;
 import com.bigdatalighter.record.IKeyValueRecord;
 import com.bigdatalighter.record.factory.IKeyValueRecordFactory;
-import com.bigdatalighter.record.factory.MapBaseRecordFactory;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 

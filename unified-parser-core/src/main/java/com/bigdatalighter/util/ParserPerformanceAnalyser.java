@@ -1,7 +1,7 @@
 package com.bigdatalighter.util;
 
-import com.bigdatalighter.generator.DelimiterRecordGenerator;
 import com.bigdatalighter.generator.SerializedRecordGenerator;
+import com.bigdatalighter.generator.DelimiterRecordGenerator;
 import com.bigdatalighter.parser.IKeyValueRecordParser;
 import com.google.common.base.Preconditions;
 

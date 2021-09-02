@@ -1,7 +1,7 @@
 package com.bigdatalighter.record.factory;
 
-import com.bigdatalighter.record.IKeyValueRecord;
 import com.bigdatalighter.record.MapBaseRecord;
+import com.bigdatalighter.record.IKeyValueRecord;
 
 import java.util.Map;
 

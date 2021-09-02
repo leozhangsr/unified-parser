@@ -1,8 +1,8 @@
 package com.bigdatalighter.formatter;
 
+import com.bigdatalighter.record.MapBaseRecord;
 import com.bigdatalighter.reader.IKeyValueReader;
 import com.bigdatalighter.record.IKeyValueRecord;
-import com.bigdatalighter.record.MapBaseRecord;
 import com.bigdatalighter.util.JsonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
